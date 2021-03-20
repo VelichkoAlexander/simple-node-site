@@ -2,6 +2,7 @@ const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
 const logger = require('morgan')
+const session = require('express-session');
 
 const mainRouter = require('./routes/')
 
@@ -10,6 +11,19 @@ const app = express()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+
+// Session Middleware
+app.use(session({
+  secret: 'loftschool',
+  key: 'sessionkey',
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    maxAge: 10 * 60 * 1000
+  },
+  saveUninitialized: false,
+  resave: false
+}))
 
 process.env.NODE_ENV === 'development'
   ? app.use(logger('dev'))
