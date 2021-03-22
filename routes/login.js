@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     if (!user) {
       res.render('pages/login', {title: 'SigIn page', msglogin: 'Check info'})
     } else {
+      console.log(req.session)
       req.session.isAdmin = true;
       res.redirect('/admin');
     }

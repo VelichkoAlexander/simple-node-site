@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const logger = require('morgan')
 const session = require('express-session');
+const FileStore = require("session-file-store")(session);
 
 const mainRouter = require('./routes/')
 
@@ -11,18 +12,17 @@ const app = express()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
-
 // Session Middleware
 app.use(session({
+  store: new FileStore(),
   secret: 'loftschool',
   key: 'sessionkey',
   cookie: {
     path: '/',
     httpOnly: true,
-    maxAge: 10 * 60 * 1000
   },
   saveUninitialized: false,
-  resave: false
+  resave: false,
 }))
 
 process.env.NODE_ENV === 'development'

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer');
-const {products, skills} = require('../data.json')
+const {products, skills} = require('../db/db.json')
 const config = require('../config.json');
 
 router.get('/', (req, res, next) => {
