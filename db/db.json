@@ -19,12 +19,12 @@
       "name": "concerts"
     },
     {
-      "number": "30",
+      "number": "32",
       "text": "Максимальное число городов в туре",
       "name": "cities"
     },
     {
-      "number": "12",
+      "number": "13",
       "text": "Лет на сцене в качестве скрипача",
       "name": "years"
     }
@@ -74,6 +74,11 @@
       "src": "./assets/img/products/Work9.jpg",
       "name": "Вино вдохновение",
       "price": 600
+    },
+    {
+      "src": "/upload/Screenshot-2021-03-22-at-10.39.12.png",
+      "name": "Test test",
+      "price": "123"
     }
   ]
 }
