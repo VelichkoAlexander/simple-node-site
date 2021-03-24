@@ -67,7 +67,6 @@ router.post('/upload', (req, res, next) => {
       fs.unlinkSync(files.photo.path)
       return res.redirect(`/?msg=${valid.status}`)
     }
-    // eslint-disable-next-line prefer-regex-literals
     const fileNameForSave = files.photo.name.replace(/\s/g, '-')
     console.log(fileNameForSave)
     const fileName = path.join(upload, fileNameForSave)
@@ -81,8 +80,6 @@ router.post('/upload', (req, res, next) => {
         .write()
       res.redirect('/');
     })
-
-    res.redirect('/admin');
   })
 })
 
