@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const {skills} = require('../db/db.json')
 const db = require('../db/index');
 const formidable = require('formidable');
 const path = require('path');
@@ -28,6 +27,7 @@ const isAdmin = (req, res, next) => {
 }
 
 router.get('/', isAdmin, (req, res, next) => {
+  const skills =  db.get('skills').value();
   res.render('pages/admin', {title: 'Admin page', skills})
 })
 
