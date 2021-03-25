@@ -14,18 +14,15 @@ router.post('/', async (req, res) => {
     return;
   }
 
-  try {
-    const user = db.get('users').find({email, password}).value();
-    if (!user) {
-      res.render('pages/login', {title: 'SigIn page', msglogin: 'Check info'})
-    } else {
-      console.log(req.session)
-      req.session.isAdmin = true;
-      res.redirect('/admin');
-    }
-  } catch (err) {
-    console.log(err);
+  const user = db.get('users').find({email, password}).value();
+  if (!user) {
+    res.render('pages/login', {title: 'SigIn page', msglogin: 'Check info'})
+  } else {
+    console.log(req.session)
+    req.session.isAdmin = true;
+    res.redirect('/admin');
   }
+
 })
 
 module.exports = router
