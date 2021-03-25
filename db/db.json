@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "alex",
+      "email": "test@test.test",
+      "password": "1234"
+    }
+  ],
+  "skills": [
+    {
+      "number": "122",
+      "text": "Возраст начала занятий на скрипке",
+      "name": "age"
+    },
+    {
+      "number": "76",
+      "text": "Концертов отыграл",
+      "name": "concerts"
+    },
+    {
+      "number": "32",
+      "text": "Максимальное число городов в туре",
+      "name": "cities"
+    },
+    {
+      "number": "148",
+      "text": "Лет на сцене в качестве скрипача",
+      "name": "years"
+    }
+  ],
+  "products": [
+    {
+      "src": "./assets/img/products/Work1.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work2.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work3.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work4.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work5.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work6.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work7.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work8.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "./assets/img/products/Work9.jpg",
+      "name": "Вино вдохновение",
+      "price": 600
+    },
+    {
+      "src": "/upload/Screenshot-2021-03-22-at-10.39.12.png",
+      "name": "Test test",
+      "price": "123"
+    }
+  ]
+}
