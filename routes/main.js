@@ -4,14 +4,14 @@ const nodemailer = require('nodemailer');
 const config = require('../config.json');
 const db = require('../db/index');
 
-router.get('/', async (req, res, next) => {
-  const {products, skills} = await getDataForMainPage();
+router.get('/',  (req, res, next) => {
+  const {products, skills} = getDataForMainPage();
   res.render('pages/index', {title: 'Main page', products, skills})
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/',  (req, res, next) => {
   if (!req.body.name || !req.body.email || !req.body.message) {
-    const {products, skills} = await getDataForMainPage();
+    const {products, skills} = getDataForMainPage();
     return res.render('pages/index', {
       title: 'Main page',
       products,
@@ -29,8 +29,8 @@ router.post('/', async (req, res, next) => {
       `\n Отправлено с: <${req.body.email}>`
   }
 
-  transporter.sendMail(mailOptions, async function  (error, info) {
-    const {products, skills} = await getDataForMainPage();
+  transporter.sendMail(mailOptions, function  (error, info) {
+    const {products, skills} =  getDataForMainPage();
     if (error) {
       return res.render('pages/index', {
         title: 'Main page',
@@ -48,9 +48,9 @@ router.post('/', async (req, res, next) => {
   })
 })
 
-async function getDataForMainPage() {
-  const products = await db.get('products').value();
-  const skills = await db.get('skills').value();
+function getDataForMainPage() {
+  const products =  db.get('products').value();
+  const skills =  db.get('skills').value();
   return {
     products,
     skills
